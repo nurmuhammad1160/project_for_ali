@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sprafkani o'chirish</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h3>⚠️ Ushbu sprafkani o‘chirmoqchimisiz?</h3>
+
+    <p><strong>{{ sprafka.fish }}</strong> — {{ sprafka.jshshir }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">🗑️ Ha, o'chirish</button>
+    </form>
+
+    <br>
+    <a href="{% url 'spravka_list' %}">⬅️ Yo‘q, bekor qilish</a>
+</body>
+</html>

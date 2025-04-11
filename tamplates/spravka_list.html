@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sprafkalar ro'yxati</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>📋 Sprafkalar ro'yxati</h1>
+
+    <a href="{% url 'spravka_create' %}">
+        <button>➕ Yangi sprafka qo'shish</button>
+    </a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>F.I.SH</th>
+                <th>JSHSHIR</th>
+                <th>Sana</th>
+                <th>Parol</th>
+                <th>Amallar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in sprafkalar %}
+            <tr>
+                <td>{{ s.id }}</td>
+                <td>{{ s.fish }}</td>
+                <td>{{ s.jshshir }}</td>
+                <td>{{ s.royxat_sana|date:"Y-m-d" }}</td>
+                <td>{{ s.parol }}</td>
+
+                <td>
+                    <a href="{% url 'spravka_update' s.id %}">✏️ Tahrirlash</a>
+                    <a href="{% url 'spravka_delete' s.id %}">🗑️ O'chirish</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">Hech qanday sprafka yo'q</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
