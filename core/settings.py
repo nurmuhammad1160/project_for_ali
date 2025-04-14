@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-!r8v6^wqq&c^!mk4k)+dfg7ui7cl_b8wa1j_j3s)n-#5r_^q4+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['medical-sertification-svv-gouz.onrender.com/']
+ALLOWED_HOSTS = ['medical-sertification-svv-gouz.onrender.com']
 
 
 # Application definition
